@@ -104,7 +104,7 @@ class ProjectData {
       isFeatured: false,
       isPortfolio: false,
       images: [
-        'assets/images/localmate_mockup.png',
+        'assets/images/project_mockup.png',
       ],
       keyFeatures: [
         'Nearby service discovery',
@@ -134,7 +134,7 @@ class ProjectData {
       isFeatured: false,
       isPortfolio: false,
       images: [
-        'assets/images/safetrack_mockup.png',
+        'assets/images/project_mockup.png',
       ],
       keyFeatures: [
         'Live location sharing',
