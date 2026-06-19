@@ -31,7 +31,7 @@ class _HeroSectionState extends State<HeroSection> {
     final double horizontalPadding = widget.isMobile ? 20.0 : 60.0;
     final double topPadding = widget.isMobile ? 50.0 : 80.0;
     final double bottomPadding = widget.isMobile ? 10.0 : 40.0;
-    final double imageSize = widget.isMobile ? 260.0 : 460.0;
+    final double imageSize = widget.isMobile ? 300.0 : 460.0;
 
     final preservedNameCard = NameCard(
       key: _internalNameCardKey,
