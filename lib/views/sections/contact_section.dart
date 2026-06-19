@@ -16,7 +16,7 @@ class ContactSection extends StatelessWidget {
 
     // sizing
     final horizontalPadding = isMobile ? 20.0 : 42.0;
-    final verticalPadding = isMobile ? 44.0 : 80.0;
+    final verticalPadding = isMobile ? 60.0 : 80.0;
     final panelSpacing = isMobile ? 14.0 : 24.0;
     final contentMaxWidth = isMobile ? double.infinity : 1320.0;
 

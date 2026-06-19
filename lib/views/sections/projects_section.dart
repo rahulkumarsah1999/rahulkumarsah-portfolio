@@ -37,7 +37,7 @@ class _ProjectsSectionState extends State<ProjectsSection> {
         isMobile ? 20.0 : 42.0;
 
     final verticalPadding =
-        isMobile ? 44.0 : 80.0;
+        isMobile ? 60.0 : 80.0;
 
     final sectionSpacing =
         isMobile ? 18.0 : 28.0;
@@ -74,8 +74,8 @@ class _ProjectsSectionState extends State<ProjectsSection> {
 
     final tech = {
       'name': 'Projects',
-      'lightIcon': 'assets/images/work.svg',
-      'darkIcon': 'assets/images/work.svg',
+      'lightIcon': 'assets/icons/work.svg',
+      'darkIcon': 'assets/icons/work.svg',
     };
 
     return Container(
@@ -117,7 +117,7 @@ class _ProjectsSectionState extends State<ProjectsSection> {
                   SectionTitle(title: ' My', subtitle: ' Projects '),
 
                   SvgPicture.asset(
-                    'assets/images/sparkle.svg',
+                    'assets/icons/sparkle.svg',
                     height: 16,
                     width: 16,
                     colorFilter: ColorFilter.mode(

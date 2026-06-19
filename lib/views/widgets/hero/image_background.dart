@@ -84,7 +84,7 @@ class _ImagebackgroundState extends State<Imagebackground>
             0xFF8C66FF);
 
         return Padding(
-          padding: EdgeInsets.only(right: isMobile ? 0 : 90),
+          padding: EdgeInsets.only(right: isMobile ? 0 : 40),
           child: SizedBox(
             height: heroSize,
             width: heroSize,
@@ -122,8 +122,8 @@ class _ImagebackgroundState extends State<Imagebackground>
                             return Transform.rotate(
                               angle: _orbitController.value * pi * 2,
                               child: Container(
-                                height: heroSize * 0.85,
-                                width: heroSize * 0.85,
+                                height: heroSize * 0.80,
+                                width: heroSize * 0.80,
                                 decoration: BoxDecoration(
                                   shape: BoxShape.circle,
                                   gradient: SweepGradient(
@@ -150,8 +150,8 @@ class _ImagebackgroundState extends State<Imagebackground>
                             return Transform.rotate(
                               angle: (_orbitController.value * pi * 2) + pi, // 180° Balanced Offset
                               child: Container(
-                                height: heroSize * 0.85,
-                                width: heroSize * 0.85,
+                                height: heroSize * 0.80,
+                                width: heroSize * 0.80,
                                 decoration: BoxDecoration(
                                   shape: BoxShape.circle,
                                   gradient: SweepGradient(
@@ -173,8 +173,8 @@ class _ImagebackgroundState extends State<Imagebackground>
 
                         // 4. Structural Inner Ring Border
                         Container(
-                          height: heroSize * 0.80,
-                          width: heroSize * 0.80,
+                          height: heroSize * 0.78,
+                          width: heroSize * 0.78,
                           padding: const EdgeInsets.all(4),
                           decoration: BoxDecoration(
                             shape: BoxShape.circle,
@@ -210,112 +210,10 @@ class _ImagebackgroundState extends State<Imagebackground>
                           ),
                         ),
 
-                        // 5. Original Yellow Sparkle Star
-                        AnimatedBuilder(
-                          animation: _orbitController,
-                          builder: (context, child) {
-                            final angle = _orbitController.value * pi * 2;
-                            final orbitRadius = heroSize * 0.39;
-
-                            final starX = orbitRadius * cos(angle);
-                            final starY = orbitRadius * sin(angle);
-                            final pulse = 1.0 + 0.12 * sin(_orbitController.value * pi * 10);
-
-                            return Transform.translate(
-                              offset: Offset(starX, starY),
-                              child: Transform.rotate(
-                                angle: angle + pi / 4,
-                                child: Transform.scale(
-                                  scale: pulse,
-                                  child: Container(
-                                    width: 32,
-                                    height: 32,
-                                    alignment: Alignment.center,
-                                    decoration: BoxDecoration(
-                                      shape: BoxShape.circle,
-                                      boxShadow: [
-                                        BoxShadow(
-                                          color: yellowStarColor.withValues(alpha: 0.55),
-                                          blurRadius: 16,
-                                          spreadRadius: 2,
-                                        ),
-                                      ],
-                                    ),
-                                    child: SvgPicture.asset(
-                                      'assets/images/sparkle.svg',
-                                      width: 26,
-                                      height: 26,
-                                      fit: BoxFit.contain,
-                                      colorFilter: ColorFilter.mode(
-                                        yellowStarColor,
-                                        BlendMode.srcIn,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            );
-                          },
-                        ),
-
-                        // 6. Dynamic Gradient SkyBlue Star (Exact Clone Size)
-                        AnimatedBuilder(
-                          animation: _orbitController,
-                          builder: (context, child) {
-                            final angle = (_orbitController.value * pi * 2) + pi;
-                            final orbitRadius = heroSize * 0.39;
-
-                            final starX = orbitRadius * cos(angle);
-                            final starY = orbitRadius * sin(angle);
-                            final pulse = 1.0 + 0.12 * sin((_orbitController.value + 0.5) * pi * 10);
-
-                            final leadingSkyBlue = const Color(0xFF38BDF8);
-
-                            return Transform.translate(
-                              offset: Offset(starX, starY),
-                              child: Transform.rotate(
-                                angle: angle + pi / 4,
-                                child: Transform.scale(
-                                  scale: pulse,
-                                  child: Container(
-                                    width: 32,
-                                    height: 32,
-                                    alignment: Alignment.center,
-                                    decoration: BoxDecoration(
-                                      shape: BoxShape.circle,
-                                      boxShadow: [
-                                        BoxShadow(
-                                          color: leadingSkyBlue.withValues(alpha: 0.55),
-                                          blurRadius: 16,
-                                          spreadRadius: 2,
-                                        ),
-                                        BoxShadow(
-                                          color: const Color(0xFF3B82F6).withValues(alpha: 0.35),
-                                          blurRadius: 26,
-                                        ),
-                                      ],
-                                    ),
-                                    child: SvgPicture.asset(
-                                      'assets/images/sparkle.svg',
-                                      width: 26,
-                                      height: 26,
-                                      fit: BoxFit.contain,
-                                      colorFilter: ColorFilter.mode(
-                                        leadingSkyBlue,
-                                        BlendMode.srcIn,
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            );
-                          },
-                        ),
-
-                        // 7. Profile Image Layer
+                        // 5. Profile Image Layer
                         Container(
-                          height: heroSize * 0.76,
-                          width: heroSize * 0.76,
+                          height: heroSize * 0.78,
+                          width: heroSize * 0.78,
                           decoration: BoxDecoration(
                             shape: BoxShape.circle,
                             color: AppColors.cardBackground(context),

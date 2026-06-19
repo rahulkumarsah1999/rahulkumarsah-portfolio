@@ -32,14 +32,14 @@ class DesktopNavbar extends ConsumerWidget {
       builder: (context, constraints) {
         final screenWidth = constraints.maxWidth;
 
-        // 🔥 RADICAL FIX: Breakpoint raised to 950px so it instantly becomes a clean mobile menu
+        // Breakpoint raised to 950px so it instantly becomes a clean mobile menu
         // on tablets, medium screens, and small browser windows without squeezing links.
         final isMobile = screenWidth < 950;
 
         final navbarRadius = isMobile ? 24.0 : 30.0;
         final navbarHorizontalMargin = isMobile ? 12.0 : (screenWidth < 1150 ? 16.0 : 30.0);
         final navbarHorizontalPadding = isMobile ? 16.0 : 30.0;
-        final navbarVerticalPadding = isMobile ? 8.0 : 10.0;
+        final navbarVerticalPadding = isMobile ? 3.0 : 10.0;
         final themeIconSize = isMobile ? 18.0 : 20.0;
 
         final navbarDecoration = BoxDecoration(

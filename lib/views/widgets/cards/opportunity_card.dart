@@ -62,7 +62,7 @@ class OpportunityCard extends StatelessWidget {
                   shape: BoxShape.circle,
                 ),
                 child: SvgPicture.asset(
-                  'assets/images/rocket.svg',
+                  'assets/icons/rocket.svg',
                   height: 20,
                   width: 20,
                 ),

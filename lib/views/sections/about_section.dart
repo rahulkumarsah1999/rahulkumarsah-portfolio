@@ -25,7 +25,7 @@ class AboutSection extends StatelessWidget {
               final isStackedLayout = screenWidth < 950;
 
               final double horizontalPadding = isStackedLayout ? 20.0 : 40.0;
-              final double verticalPadding = isStackedLayout ? 40.0 : 80.0;
+              final double verticalPadding = isStackedLayout ? 60.0 : 80.0;
               final double contentSpacing = isStackedLayout ? 32.0 : 48.0;
 
               return Padding(

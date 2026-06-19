@@ -23,11 +23,10 @@ class ImageSection extends StatelessWidget {
     final isDark = AppColors.isDark(context);
 
     // sizing
-    final imageSize = isMobile ? width * 0.52 : 320.0;
+    final imageSize = isMobile ? width * 0.72 : 320.0;
+    final imageWidth = isMobile ? width * 0.92 : 280.0;
 
-    final imageWidth = isMobile ? width * 0.60 : 280.0;
-
-    final glowSize = isMobile ? width * 0.72 : 260.0;
+    final glowSize = isMobile ? width * 0.82 : 260.0;
 
     final premiumGlowSize = isMobile ? width * 0.56 : 320.0;
 
