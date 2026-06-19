@@ -4,7 +4,7 @@ PortfolioModel portfolioData = PortfolioModel(
     name: "Rahul Kumar Sah ",
     email: "rkhhp713@gmail.com",
     role: " Flutter Developer | Dart | UI/UX Enthusiast",
-    imagePath:  "assets/icons/Logo.png",
+    imagePath:  "assets/images/Logo.png",
     available: "Available for Opportunities",
     about:  "I am an MCA student passionate about Flutter development and real-world problem solving.",
     phone: "+919534122070",
