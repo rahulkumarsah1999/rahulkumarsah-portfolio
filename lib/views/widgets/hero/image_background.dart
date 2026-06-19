@@ -50,7 +50,7 @@ class _ImagebackgroundState extends State<Imagebackground>
 
     WidgetsBinding.instance.addPostFrameCallback((_) async {
       await precacheImage(
-        const AssetImage('assets/icons/Logo.png'),
+        const AssetImage('assets/images/Logo.png'),
         context,
       );
       if (mounted) {
@@ -227,7 +227,7 @@ class _ImagebackgroundState extends State<Imagebackground>
                           ),
                           clipBehavior: Clip.antiAlias,
                           child: Image.asset(
-                            'assets/icons/Logo.png',
+                            'assets/images/Logo.png',
                             fit: BoxFit.cover,
                           ),
                         ),
