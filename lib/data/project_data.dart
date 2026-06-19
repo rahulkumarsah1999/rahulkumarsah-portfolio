@@ -13,7 +13,7 @@ class ProjectData {
       isFeatured: true,
       isPortfolio: true,
       images: [
-        'assets/images/portfolio_mockup.png',
+        'assets/icons/portfolio_mockup.png',
       ],
       keyFeatures: [
         'Fully responsive UI',
@@ -65,8 +65,8 @@ class ProjectData {
       isFeatured: true,
       isPortfolio: false,
       images: [
-        'assets/images/project_mockup.png',       // Main Foreground Phone
-        'assets/images/project_mockup_back.png',  // Background Phone (UI overlay image)
+        'assets/icons/project_mockup.png',       // Main Foreground Phone
+        'assets/icons/project_mockup_back.png',  // Background Phone (UI overlay image)
       ],
       keyFeatures: [
         'Dynamic quiz generation',
@@ -104,7 +104,7 @@ class ProjectData {
       isFeatured: false,
       isPortfolio: false,
       images: [
-        'assets/images/localmate_mockup.png',
+        'assets/icons/localmate_mockup.png',
       ],
       keyFeatures: [
         'Nearby service discovery',
@@ -134,7 +134,7 @@ class ProjectData {
       isFeatured: false,
       isPortfolio: false,
       images: [
-        'assets/images/safetrack_mockup.png',
+        'assets/icons/safetrack_mockup.png',
       ],
       keyFeatures: [
         'Live location sharing',

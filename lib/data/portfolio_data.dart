@@ -4,7 +4,7 @@ PortfolioModel portfolioData = PortfolioModel(
     name: "Rahul Kumar Sah ",
     email: "rkhhp713@gmail.com",
     role: " Flutter Developer | Dart | UI/UX Enthusiast",
-    imagePath:  "assets/images/Logo.png",
+    imagePath:  "assets/icons/Logo.png",
     available: "Available for Opportunities",
     about:  "I am an MCA student passionate about Flutter development and real-world problem solving.",
     phone: "+919534122070",
@@ -90,7 +90,7 @@ PortfolioModel portfolioData = PortfolioModel(
     {
       'title': 'Flutter Apps',
       'description': 'Cross-platform mobile development',
-      'images': [
+      'icons': [
         {
           'lightIcon': 'assets/icons/flutter.svg',
           'darkIcon': 'assets/icons/flutter.svg',
@@ -109,7 +109,7 @@ PortfolioModel portfolioData = PortfolioModel(
     {
       'title': 'Backend & APIs',
       'description': 'Firebase, REST APIs & integrations',
-      'images': [
+      'icons': [
         {
           'lightIcon': 'assets/icons/firebase.svg',
           'darkIcon': 'assets/icons/firebase.svg',
@@ -128,7 +128,7 @@ PortfolioModel portfolioData = PortfolioModel(
     {
       'title': 'Problem Solver',
       'description': 'Building solutions for real problems',
-      'images': [
+      'icons': [
         {
           'lightIcon': 'assets/icons/brain.svg',
           'darkIcon': 'assets/icons/brain.svg',
@@ -251,7 +251,7 @@ techStack: [
     {
       'name': 'rocket',
       'title': 'Available For',
-      'icon': 'assets/icons/rocket_icon.svg',
+      'icon': 'assets/icons/rocket.svg',
     },
     {
       'title': 'Full Time Dev Roles',

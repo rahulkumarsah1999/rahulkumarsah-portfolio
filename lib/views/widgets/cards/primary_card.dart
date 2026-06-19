@@ -18,7 +18,7 @@ class PrimaryCard extends StatelessWidget {
 
     final title = cardDetail['title'] ?? '';
     final description = cardDetail['description'] ?? '';
-    final icons = cardDetail['images'] as List?;
+    final icons = cardDetail['icons'] as List?;
 
     final isDark =
         Theme.of(context).brightness == Brightness.dark;
