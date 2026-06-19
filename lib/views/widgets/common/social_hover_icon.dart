@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
 /// Reusable hover lift widget for cards, images,
-/// icons, buttons and any custom child.
+/// images, buttons and any custom child.
 class HoverLift extends StatefulWidget {
   final Widget child;
   final double liftOffset;
   final Duration duration;
   final VoidCallback onTap;
-  /// Optional grayscale effect for icons/chips on hover.
+  /// Optional grayscale effect for images/chips on hover.
   /// Keep false for cards and buttons.
   final bool grayscaleOnHover;
 

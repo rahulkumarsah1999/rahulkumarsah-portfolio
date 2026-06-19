@@ -4,7 +4,7 @@ import 'package:portfolio/core/constants/app_colors.dart';
 class InputField extends StatelessWidget {
   final TextEditingController controller;
   final String hint;
-  // TODO(Rahul): Migrate all form icons to SVG.
+  // TODO(Rahul): Migrate all form images to SVG.
   final Widget icon;
   final int maxLines;
   final TextInputType keyboardType;

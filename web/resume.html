@@ -48,7 +48,20 @@
         padding: 0 !important;
         page-break-inside: avoid !important;
         page-break-after: avoid !important;
+        transform: none !important;
       }
+      #canvas-wrapper {
+        height: auto !important;
+        overflow: visible !important;
+        width: auto !important;
+      }
+    }
+
+    /* Responsive scaling wrapper: keeps the A4 layout intact while shrinking
+       it to fit smaller screens instead of causing horizontal overflow */
+    #canvas-wrapper {
+      width: 100%;
+      overflow: hidden;
     }
 
     /* Clean editable text fields with absolutely NO border outlines or selected look */
@@ -84,15 +97,15 @@
 <body class="bg-slate-900 text-slate-100 font-sans min-h-screen flex flex-col items-center py-6 px-4 no-print:bg-slate-900">
 
   <div class="no-print w-full max-w-[1000px] bg-slate-800/80 backdrop-blur-md rounded-2xl p-4 mb-5 flex flex-col gap-3 shadow-xl border border-slate-700/30">
-    <div class="flex flex-wrap gap-4 items-center justify-between">
+    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
       <div>
         <h1 class="text-sm font-bold text-white flex items-center gap-2">
           <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
           Rahul Kumar Sah — Resume Customizer
         </h1>
-        <p class="text-[11px] text-slate-400"> Spacing and density can be fine-tuned using the slider.</p>
+        <p class="text-[11px] text-slate-400">Editing and image uploads are locked. Use the slider below to fine-tune spacing.</p>
       </div>
-      <div class="flex items-center gap-3 flex-wrap">
+      <div class="flex flex-wrap items-center gap-3 w-full sm:w-auto">
         <!-- Spacing / Density Control -->
         <div class="flex items-center gap-2 bg-slate-900/60 px-3 py-1.5 rounded-lg">
           <label for="spacingSlider" class="text-[10px] text-slate-400 font-medium">Spacing Density:</label>
@@ -100,7 +113,7 @@
         </div>
 
         <!-- Print Action -->
-        <button onclick="window.print()" class="px-3.5 py-1.5 bg-blue-600 hover:bg-blue-500 text-white font-semibold text-xs rounded-lg transition-all flex items-center gap-1.5 shadow-md shadow-blue-600/10">
+        <button onclick="window.print()" class="px-3.5 py-1.5 bg-blue-600 hover:bg-blue-500 text-white font-semibold text-xs rounded-lg transition-all flex items-center justify-center gap-1.5 shadow-md shadow-blue-600/10 flex-1 sm:flex-none">
           <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
           Print / Save PDF
         </button>
@@ -108,12 +121,13 @@
     </div>
   </div>
 
+  <div id="canvas-wrapper" class="w-full flex justify-center">
   <div id="resume-canvas" class="print-container w-[210mm] h-[297mm] min-w-[210mm] min-h-[297mm] max-h-[297mm] bg-white text-slate-800 shadow-2xl rounded-2xl overflow-hidden flex flex-row transition-all relative" style="transform-origin: top center;">
     
     <!-- Hidden File Inputs for Manual Local Updates inside sandbox -->
-    <input type="file" id="avatarInput" accept="image/*" class="hidden" onchange="previewLocalImage(this, 'avatarImg', 'avatarPlaceholder')">
-    <input type="file" id="portfolioInput" accept="image/*" class="hidden" onchange="previewLocalImage(this, 'portfolioImg', 'portfolioPlaceholder')">
-    <input type="file" id="signatureInput" accept="image/*" class="hidden" onchange="previewLocalImage(this, 'signatureImg', 'signatureText')">
+    <input type="file" id="avatarInput" accept="image/*" class="hidden" disabled onchange="previewLocalImage(this, 'avatarImg', 'avatarPlaceholder')">
+    <input type="file" id="portfolioInput" accept="image/*" class="hidden" disabled onchange="previewLocalImage(this, 'portfolioImg', 'portfolioPlaceholder')">
+    <input type="file" id="signatureInput" accept="image/*" class="hidden" disabled onchange="previewLocalImage(this, 'signatureImg', 'signatureText')">
 
     <!-- Left Sidebar (31% width) -->
     <div class="w-[31%] bg-gradient-to-b from-[#060B16] via-[#091223] to-[#0A101D] text-slate-300 p-6 flex flex-col justify-between relative overflow-hidden select-none shrink-0">
@@ -123,11 +137,7 @@
       <div class="space-y-4">
         <!-- Circular Profile Container with subtle ring -->
         <div class="flex flex-col items-center relative mt-1">
-          <div class="relative group cursor-pointer hover:scale-105 hover:-translate-y-1 transition-all duration-500"
-
-     onclick="document.getElementById('avatarInput').click()"
-
-     title="Click to upload profile photo">
+          <div class="relative group hover:scale-105 hover:-translate-y-1 transition-all duration-500"
 
   <!-- Soft Glow -->
 
@@ -585,9 +595,7 @@ Flutter Developer with practical experience in designing and developing cross-pl
 
   <!-- Image -->
   <div
-      class="w-[38%] group-hover:w-[50%] transition-all duration-700 relative overflow-hidden rounded-lg z-10 min-h-[85px] bg-slate-950 cursor-pointer"
-      onclick="document.getElementById('portfolioInput').click()"
-      title="Click to upload portfolio mockup screenshot">
+      class="w-[38%] group-hover:w-[50%] transition-all duration-700 relative overflow-hidden rounded-lg z-10 min-h-[85px] bg-slate-950">
 
     <img id="portfolioImg"
          src="portfolio_mockup.png"
@@ -675,13 +683,10 @@ Flutter Developer with practical experience in designing and developing cross-pl
           </div>
         </div>
 
-        <div class="text-right flex flex-col items-end cursor-pointer" onclick="document.getElementById('signatureInput').click()" title="Click to upload transparent signature">
+        <div class="text-right flex flex-col items-end">
           <div class="h-7 flex items-center justify-end relative">
-<img id="signatureImg"
-     src="rahul-signature.png"
-     alt="Rahul Kumar Sah Signature"
-     class="h-7 object-contain mix-blend-darken select-none pointer-events-none"
-     onerror="handleImageError(this, 'signatureText')">
+            <img id="signatureImg" src="image-removebg-preview (1).png" alt="Rahul Kumar Sah Signature" class="h-7 object-contain mix-blend-darken select-none pointer-events-none" 
+                 onerror="handleImageError(this, 'signatureText')">
             <span id="signatureText" class="hidden font-signature text-xl text-slate-800 select-none leading-none">Rahul Kumar Sah</span>
           </div>
           <p class="text-[7.5px] uppercase tracking-widest text-slate-400 font-extrabold mt-1">Developer Signature</p>
@@ -689,6 +694,7 @@ Flutter Developer with practical experience in designing and developing cross-pl
       </div>
 
     </div>
+  </div>
   </div>
 
   <script>
@@ -729,6 +735,25 @@ Flutter Developer with practical experience in designing and developing cross-pl
       }
     }
 
+    function fitCanvasToScreen() {
+      const canvas = document.getElementById('resume-canvas');
+      const wrapper = document.getElementById('canvas-wrapper');
+      if (!canvas || !wrapper) return;
+
+      // Reset transform first so we measure the canvas's true natural size
+      canvas.style.transform = 'scale(1)';
+
+      const naturalWidth = canvas.offsetWidth;
+      const naturalHeight = canvas.offsetHeight;
+      const availableWidth = wrapper.clientWidth;
+
+      // Never scale up past 1 (we only shrink to fit smaller screens)
+      const scale = Math.min(1, availableWidth / naturalWidth);
+
+      canvas.style.transform = `scale(${scale})`;
+      wrapper.style.height = (naturalHeight * scale) + 'px';
+    }
+
     function adjustDensity(val) {
       const rightPanel = document.getElementById('density-container');
       const sidePanel = document.querySelector('.w-\\[31\\%\\]');
@@ -737,10 +762,16 @@ Flutter Developer with practical experience in designing and developing cross-pl
       rightPanel.style.padding = `${scaleFactor * 1.5}rem`;
       rightPanel.style.rowGap = `${scaleFactor * 0.9}rem`;
       sidePanel.style.padding = `${scaleFactor * 1.5}rem`;
+
+      // Padding changes can shift the canvas's height, so re-fit after layout settles
+      requestAnimationFrame(fitCanvasToScreen);
     }
+
+    window.addEventListener('resize', fitCanvasToScreen);
 
     window.addEventListener('DOMContentLoaded', () => {
       adjustDensity(0.9);
+      fitCanvasToScreen();
     });
   </script>
 </body>

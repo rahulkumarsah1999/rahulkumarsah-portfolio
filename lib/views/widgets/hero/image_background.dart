@@ -242,7 +242,7 @@ class _ImagebackgroundState extends State<Imagebackground>
                                       ],
                                     ),
                                     child: SvgPicture.asset(
-                                      'assets/icons/sparkle.svg',
+                                      'assets/images/sparkle.svg',
                                       width: 26,
                                       height: 26,
                                       fit: BoxFit.contain,
@@ -296,7 +296,7 @@ class _ImagebackgroundState extends State<Imagebackground>
                                       ],
                                     ),
                                     child: SvgPicture.asset(
-                                      'assets/icons/sparkle.svg',
+                                      'assets/images/sparkle.svg',
                                       width: 26,
                                       height: 26,
                                       fit: BoxFit.contain,

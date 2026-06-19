@@ -5,7 +5,7 @@ import 'package:portfolio/core/constants/app_colors.dart';
 ///
 /// Supports:
 /// - Single icon (key: 'icon')
-/// - Theme-based icons (keys: 'darkIcon', 'lightIcon')
+/// - Theme-based images (keys: 'darkIcon', 'lightIcon')
 String getIcon(
   BuildContext context,
   Map<String, dynamic> item,

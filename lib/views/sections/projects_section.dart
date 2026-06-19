@@ -74,8 +74,8 @@ class _ProjectsSectionState extends State<ProjectsSection> {
 
     final tech = {
       'name': 'Projects',
-      'lightIcon': 'assets/icons/work.svg',
-      'darkIcon': 'assets/icons/work.svg',
+      'lightIcon': 'assets/images/work.svg',
+      'darkIcon': 'assets/images/work.svg',
     };
 
     return Container(
@@ -117,7 +117,7 @@ class _ProjectsSectionState extends State<ProjectsSection> {
                   SectionTitle(title: ' My', subtitle: ' Projects '),
 
                   SvgPicture.asset(
-                    'assets/icons/sparkle.svg',
+                    'assets/images/sparkle.svg',
                     height: 16,
                     width: 16,
                     colorFilter: ColorFilter.mode(
