@@ -12,6 +12,7 @@
 .swiftpm/
 migrate_working_dir/
 lib/core/config/api_keys.dart
+web/rahul-signature.png
 
 # IntelliJ related
 *.iml
