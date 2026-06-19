@@ -74,8 +74,8 @@ class _ImagebackgroundState extends State<Imagebackground>
         final isDark = AppColors.isDark(context);
 
         final heroSize = constraints.maxWidth.clamp(
-          isMobile ? 220.0 : 300.0,
-          isMobile ? 340.0 : 460.0,
+          isMobile ? 250.0 : 300.0,
+          isMobile ? 400.0 : 460.0,
         );
 
         final yellowStarColor = const Color(0xFFFFD700);
