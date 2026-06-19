@@ -29,7 +29,6 @@ class _HomeScreenState extends ConsumerState<HomeScreen> with SingleTickerProvid
   final ScrollController _scrollController = ScrollController();
   bool _showTitle = false;
 
-  // 🚀 SENIOR DEV ARCHITECTURE: Dual-Engine Tickers for Luxury Entrance Sequences
   late final AnimationController _entranceController;
 
   // Staggered Layer Interpolators
@@ -51,7 +50,6 @@ class _HomeScreenState extends ConsumerState<HomeScreen> with SingleTickerProvid
 
     await _scrollController.animateTo(
       targetOffset.clamp(0.0, _scrollController.position.maxScrollExtent),
-      // 💎 Senior Level Cinematic Scroll Profile
       duration: const Duration(milliseconds: 850),
       curve: Curves.fastLinearToSlowEaseIn,
     );
@@ -62,10 +60,10 @@ class _HomeScreenState extends ConsumerState<HomeScreen> with SingleTickerProvid
     super.initState();
     _entranceController = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 1200), // Highly responsive sweet-spot entry
+      duration: const Duration(milliseconds: 1200),
     );
 
-    // Layer 1: Premium Quick Navbar entrance sequence
+    // Layer 1: Navbar entrance sequence
     _navbarFade = CurvedAnimation(
       parent: _entranceController,
       curve: const Interval(0.0, 0.40, curve: Curves.easeOut),

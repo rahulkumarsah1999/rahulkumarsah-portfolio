@@ -122,18 +122,18 @@ class _ImagebackgroundState extends State<Imagebackground>
                             return Transform.rotate(
                               angle: _orbitController.value * pi * 2,
                               child: Container(
-                                height: heroSize * 0.78,
-                                width: heroSize * 0.78,
+                                height: heroSize * 0.85,
+                                width: heroSize * 0.85,
                                 decoration: BoxDecoration(
                                   shape: BoxShape.circle,
                                   gradient: SweepGradient(
                                     colors: [
-                                      Colors.transparent, // Shuru me ekdum invisible
+                                      Colors.transparent,
                                       yellowStarColor.withValues(alpha: 0.02),
                                       yellowStarColor.withValues(alpha: 0.15),
                                       yellowStarColor.withValues(alpha: 0.45),
-                                      yellowStarColor,    // Star ke paas peak bright
-                                      Colors.transparent, // Ending edge soft karne ke liye immediate fade
+                                      yellowStarColor,
+                                      Colors.transparent,
                                     ],
                                     stops: const [0.0, 0.40, 0.70, 0.88, 0.98, 1.0],
                                   ),
@@ -150,8 +150,8 @@ class _ImagebackgroundState extends State<Imagebackground>
                             return Transform.rotate(
                               angle: (_orbitController.value * pi * 2) + pi, // 180° Balanced Offset
                               child: Container(
-                                height: heroSize * 0.78,
-                                width: heroSize * 0.78,
+                                height: heroSize * 0.85,
+                                width: heroSize * 0.85,
                                 decoration: BoxDecoration(
                                   shape: BoxShape.circle,
                                   gradient: SweepGradient(
@@ -173,8 +173,8 @@ class _ImagebackgroundState extends State<Imagebackground>
 
                         // 4. Structural Inner Ring Border
                         Container(
-                          height: heroSize * 0.76,
-                          width: heroSize * 0.76,
+                          height: heroSize * 0.80,
+                          width: heroSize * 0.80,
                           padding: const EdgeInsets.all(4),
                           decoration: BoxDecoration(
                             shape: BoxShape.circle,
@@ -314,8 +314,8 @@ class _ImagebackgroundState extends State<Imagebackground>
 
                         // 7. Profile Image Layer
                         Container(
-                          height: heroSize * 0.68,
-                          width: heroSize * 0.68,
+                          height: heroSize * 0.76,
+                          width: heroSize * 0.76,
                           decoration: BoxDecoration(
                             shape: BoxShape.circle,
                             color: AppColors.cardBackground(context),
